@@ -8,9 +8,6 @@ public class AdressBook {
 	ArrayList<ContactPerson> list = new ArrayList<ContactPerson>();
 	
 	public void add() {
-		int member = 0;
-		System.out.println("Number of contacts to be added:");
-        int contact = sc.nextInt();
 	    System.out.println("Enter First Name : ");
 		String firstName = sc.next();
 		System.out.println("Enter Last Name : ");
