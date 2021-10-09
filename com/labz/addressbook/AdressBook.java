@@ -1,24 +1,50 @@
 package com.labz.addressbook;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AdressBook {
-	public static void main(String[] args) {
-		System.out.println("Welcome to Address Book");
-		String firstName = "Brijesh";
-		String lastName = "kulal";
-		String address = "Near SM Temple Badaje";
-		String city = "Manjeshwar";
-		String state = "Kerala";
-		int pinCode = 671323;
-		long mobileNumber = 8899221100l;
-		String emailId = "Raj123@gmail.com";
+	Scanner sc = new Scanner(System.in);
+	ArrayList<ContactPerson> list = new ArrayList<ContactPerson>();
+	
+	public void add() {
+		int member = 0;
+		System.out.println("Number of contacts to be added:");
+        int contact = sc.nextInt();
+	    System.out.println("Enter First Name : ");
+		String firstName = sc.next();
+		System.out.println("Enter Last Name : ");
+		String lastName = sc.next();
+		System.out.println("Enter Address : ");
+		String address = sc.next();
+		System.out.println("Enter City : ");
+		String city = sc.next();
+		System.out.println("Enter State : ");
+		String state = sc.next();
+		System.out.println("Enter Zip : ");
+		int zip = sc.nextInt();
+		System.out.println("Enter Mobile Number : ");
+		long phoneNumber = sc.nextLong();
+		System.out.println("Enter Email : ");
+		String email = sc.next();
+		ContactPerson person = new ContactPerson(firstName, lastName, address, city, state, zip, phoneNumber, email);
+		list.add(person);
 		System.out.println("Name 	     : "  + firstName + " " + lastName + "\n"
-                + "Address      : "  + address + "\n"
-                + "City         : "  + city + "\n"
-                + "State        : "  + state + "\n"
-                + "ZipCode      : "  + pinCode + "\n"
-                + "MobileNumber : "  + mobileNumber + "\n"
-                + "EmailId      : "  + emailId + "\n" );
+                		+ "Address       : "  + address + "\n"
+                		+ "City          : "  + city + "\n"
+                		+ "State         : "  + state + "\n"
+                		+ "Zip      	 : "  + zip + "\n"
+                		+ "MobileNumber  : "  + phoneNumber + "\n"
+                		+ "EmailId       : "  + email + "\n" );
+		
 
+		
 	}
+		public static void main(String[] args) {
+			AdressBook addressbook = new AdressBook();		
+			addressbook.add();
+			
+		}
 
+	
 }
