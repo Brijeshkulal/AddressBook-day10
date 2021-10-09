@@ -6,9 +6,14 @@ import java.util.Scanner;
 public class AdressBook {
 	Scanner sc = new Scanner(System.in);
 	ArrayList<ContactPerson> list = new ArrayList<ContactPerson>();
+	ContactPerson person = new ContactPerson();
 	
-	public void add() {
-	    System.out.println("Enter First Name : ");
+	public void addContact() {
+		System.out.println("number of contacts to be added");
+		int n =sc.nextInt();
+		for (int i=0;i<n;i++)
+		{
+		System.out.println("Enter First Name : ");
 		String firstName = sc.next();
 		System.out.println("Enter Last Name : ");
 		String lastName = sc.next();
@@ -24,22 +29,30 @@ public class AdressBook {
 		long phoneNumber = sc.nextLong();
 		System.out.println("Enter Email : ");
 		String email = sc.next();
-		ContactPerson person = new ContactPerson(firstName, lastName, address, city, state, zip, phoneNumber, email);
+		person = new ContactPerson(firstName, lastName, address, city, state, zip, phoneNumber, email);
 		list.add(person);
-		System.out.println("Name 	     : "  + firstName + " " + lastName + "\n"
-                		+ "Address       : "  + address + "\n"
-                		+ "City          : "  + city + "\n"
-                		+ "State         : "  + state + "\n"
-                		+ "Zip      	 : "  + zip + "\n"
-                		+ "MobileNumber  : "  + phoneNumber + "\n"
-                		+ "EmailId       : "  + email + "\n" );
+		print();
+		}
 		
-
 		
 	}
+	public void print() {
+		System.out.println("Contact Details");
+		System.out.println("Name 	      : "  + person.getLastName()+ " " + person.getLastName() + "\n"
+                		+ "Address       : "  + person.getAddress() + "\n"
+                		+ "City          : "  + person.getCity() + "\n"
+                		+ "State         : "  + person.getState() + "\n"
+                		+ "Zip       	: "  + person.getZip() + "\n"
+                		+ "MobileNumber  : "  + person.getPhonenumber() + "\n"
+                		+ "EmailId       : "  + person.getEmail() + "\n" );
+		
+
+		}
+	
+		
 		public static void main(String[] args) {
 			AdressBook addressbook = new AdressBook();		
-			addressbook.add();
+			addressbook.addContact();
 			
 		}
 
