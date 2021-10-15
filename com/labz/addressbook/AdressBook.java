@@ -56,7 +56,7 @@ public class AdressBook {
         boolean edited = false;
         for (int i = 0; i < contactList.size(); i++) {
             String name = contactList.get(i).getFirstName();
-            if (name.equals(editName)) {
+            if (name.equalsIgnoreCase(editName)) {
                 edited = true;
                 break;
             }
@@ -72,7 +72,7 @@ public class AdressBook {
 	        boolean deleted = false;
 	        for (int i = 0; i < contactList.size(); i++) {
 	            String name = contactList.get(i).getFirstName();
-	            if (name.equals(deleteName)) {
+	            if (name.equalsIgnoreCase(deleteName)) {
 	            	deleted = true;
 	            	contactList.remove(i);
 	            	printContact();
