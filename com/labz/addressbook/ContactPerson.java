@@ -25,8 +25,7 @@ public class ContactPerson {
     }
 	
 	public ContactPerson() {
-		
-	}
+		}
 
 	public String getFirstName() {
 		return firstName;
@@ -92,6 +91,10 @@ public class ContactPerson {
 		this.email = email;
 	}
 
-	
-
+	@Override
+	public String toString() {
+		return "ContactPerson [firstName=" + firstName + ", lastName=" + lastName + ", address=" + address + ", city="
+				+ city + ", state=" + state + ", zip=" + zip + ", phonenumber=" + phonenumber + ", email=" + email
+				+ "]";
+	}
 }
