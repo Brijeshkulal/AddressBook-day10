@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class AdressBook {
 	Scanner sc = new Scanner(System.in);
-	List<ContactPerson> Contactlist = new ArrayList<>();
+	List<ContactPerson> contactList = new ArrayList<>();
 	ContactPerson person = new ContactPerson();
 	
 	public void addContact() {
@@ -35,7 +35,7 @@ public class AdressBook {
 			System.out.println("Enter Email : ");
 			String email = sc.next();
 			person = new ContactPerson(firstName, lastName, address, city, state, zip, phoneNumber, email);
-			Contactlist.add(person);
+			contactList.add(person);
 			printContact();
 	}
 	
@@ -54,16 +54,34 @@ public class AdressBook {
         System.out.println("Enter the first name of person to edit contact");
         String editName = sc.next();
         boolean edited = false;
-        for (int i = 0; i < Contactlist.size(); i++) {
-            String name = Contactlist.get(i).getFirstName();
+        for (int i = 0; i < contactList.size(); i++) {
+            String name = contactList.get(i).getFirstName();
             if (name.equals(editName)) {
-                createContact();
                 edited = true;
                 break;
             }
         }
         if (!edited) {
-            System.out.println("Invalid input");
+            System.out.println("Name does not exit");
         }
     }
+	
+	public void deleteContact() {
+		  System.out.println("Enter the first name of person to edit contact");
+	        String deleteName = sc.next();
+	        boolean deleted = false;
+	        for (int i = 0; i < contactList.size(); i++) {
+	            String name = contactList.get(i).getFirstName();
+	            if (name.equals(deleteName)) {
+	            	deleted = true;
+	            	contactList.remove(i);
+	            	printContact();
+	                break;
+	            }
+	        }
+	        if (!deleted) {
+	            System.out.println("Name does not exit");
+	        }
+		
+	}
 }

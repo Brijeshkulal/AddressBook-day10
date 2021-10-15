@@ -8,7 +8,7 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		AdressBook addressbook = new AdressBook();	
 		while (true) {
-            System.out.println("Enter \n 1 To add The contact \n 2 To edit the contact \n 3 to exit");
+			System.out.println("Enter \n 1 To add The contact \n 2 To edit the contact \n 3 To delete the contact \n 4 to exit");
             int choice = sc.nextInt();
             switch (choice) {
                 case 1:
@@ -18,6 +18,9 @@ public class Main {
                     addressbook.editContact();
                     break;
                 case 3:
+                    addressbook.deleteContact();
+                    break;
+                case 4:
                     System.exit(0);
                     break;
                 default:
